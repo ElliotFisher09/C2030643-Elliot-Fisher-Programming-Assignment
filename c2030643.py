@@ -13,10 +13,13 @@ from sympy import Symbol, sin, exp, integrate, diff, pi, sqrt
     Returns:
     True if n satisfies the condition, False otherwise.
     Error message if n is out of range (not between 1 and 100).
+    Error message if n is not a number
     """
 
 
 def question1(n):
+    if type(n) not in (int, float):
+        return "Error: Input must be a number."
     if not (1 <= n <= 100):
         return "Error: Input must be between 1 and 100."
     return (n % 6 == 5)
